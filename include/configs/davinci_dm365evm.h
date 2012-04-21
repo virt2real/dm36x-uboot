@@ -51,11 +51,13 @@
 #define CONFIG_CONS_INDEX		1
 #define CONFIG_BAUDRATE			115200
 
+#if 0 // No eeprom
 /* EEPROM definitions for EEPROM on DM365 EVM */
 #define CONFIG_SYS_I2C_EEPROM_ADDR_LEN		2
 #define CONFIG_SYS_I2C_EEPROM_ADDR		0x50
 #define CONFIG_SYS_EEPROM_PAGE_WRITE_BITS	6
 #define CONFIG_SYS_EEPROM_PAGE_WRITE_DELAY_MS	20
+#endif
 
 /* Network Configuration */
 #define CONFIG_DRIVER_TI_EMAC
@@ -91,7 +93,7 @@
 #define CONFIG_MMC
 #define CONFIG_GENERIC_MMC
 #define CONFIG_DAVINCI_MMC
-#define CONFIG_DAVINCI_MMC_SD1
+//FAH#define CONFIG_DAVINCI_MMC_SD1
 #define CONFIG_MMC_MBLOCK
 
 #define PINMUX4_USBDRVBUS_BITCLEAR       0x3000
@@ -193,10 +195,10 @@
 #endif
 
 #define CONFIG_BOOTDELAY	3
-#define CONFIG_BOOTCOMMAND	"if mmc rescan 0; then if fatload mmc 0 0x80600000 boot.scr; then source 0x80600000; else fatload mmc 0 0x80700000 uImage; bootm 80700000; fi; fi"
+#define CONFIG_BOOTCOMMAND	"mmc rescan 0;ext2load mmc 0:1 0x80700000 /boot/uImage;bootm 0x80700000"
 #define CONFIG_BOOTARGS \
 		"console=ttyS0,115200n8 " \
-		"root=/dev/mmcblk0p2 rw rootwait ip=off"
+		"root=/dev/mmcblk0p1 ro rootwait ip=off mem=110M"
 
 #define CONFIG_CMDLINE_EDITING
 #define CONFIG_VERSION_VARIABLE

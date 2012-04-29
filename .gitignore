@@ -1,0 +1,12 @@
+*.o
+.depend
+.boards.depend
+System.map
+include/generated/
+lib/asm-offsets.s
+tools/uflash/uflash
+u-boot
+u-boot.bin
+u-boot.lds
+u-boot.map
+u-boot.srec

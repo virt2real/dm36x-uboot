@@ -77,7 +77,7 @@
 #define CONFIG_SYS_I2C_SLAVE		0x10	/* SMBus host address */
 
 /* NAND: socketed, two chipselects, normally 2 GBytes */
-#define CONFIG_NAND_DAVINCI
+//#define CONFIG_NAND_DAVINCI
 #define CONFIG_SYS_NAND_CS		2
 #define CONFIG_SYS_NAND_USE_FLASH_BBT
 #define CONFIG_SYS_NAND_4BIT_HW_ECC_OOBFIRST
@@ -100,8 +100,8 @@
 #define PINMUX4_USBDRVBUS_BITSET         0x2000
 
 /* USB Configuration */
-#define CONFIG_USB_DAVINCI
-#define CONFIG_MUSB_HCD
+//#define CONFIG_USB_DAVINCI
+//#define CONFIG_MUSB_HCD
 
 #ifdef CONFIG_USB_DAVINCI
 #define CONFIG_CMD_USB         /* include support for usb      */
@@ -191,6 +191,7 @@
 #define CONFIG_ENV_SIZE		(16 << 10)	/* 16 KiB */
 #define CONFIG_ENV_OFFSET	(51 << 9)	/* Sector 51 */
 #define CONFIG_ENV_IS_IN_MMC
+#define CONFIG_SYS_MMC_ENV_DEV	0
 #undef CONFIG_ENV_IS_IN_FLASH
 #endif
 

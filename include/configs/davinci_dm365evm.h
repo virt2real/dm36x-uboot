@@ -195,11 +195,11 @@
 #undef CONFIG_ENV_IS_IN_FLASH
 #endif
 
-#define CONFIG_BOOTDELAY	3
+#define CONFIG_BOOTDELAY	1
 #define CONFIG_BOOTCOMMAND	"mmc rescan 0;ext2load mmc 0:1 0x80700000 /boot/uImage;bootm 0x80700000"
 #define CONFIG_BOOTARGS \
 		"console=ttyS0,115200n8 " \
-		"root=/dev/mmcblk0p1 ro rootwait ip=off mem=110M"
+		"root=/dev/mmcblk0p1 ro rootwait ip=off mem=60M"
 
 #define CONFIG_CMDLINE_EDITING
 #define CONFIG_VERSION_VARIABLE

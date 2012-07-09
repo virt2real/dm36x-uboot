@@ -200,7 +200,8 @@
 #define CONFIG_BOOTARGS \
 		"console=ttyS0,115200n8 " \
 		"root=/dev/mmcblk0p1 ro rootwait ip=off mem=60M " \
-		"dm365_imp.oper_mode=0 davinci_capture.device_type=4 vpfe_capture.interface=1 vpfe_capture.debug=1"
+		"dm365_imp.oper_mode=0 davinci_capture.device_type=4 vpfe_capture.interface=1"
+//" vpfe_capture.debug=1"
 
 #define CONFIG_CMDLINE_EDITING
 #define CONFIG_VERSION_VARIABLE
